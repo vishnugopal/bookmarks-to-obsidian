@@ -1,5 +1,5 @@
 import fs from "fs";
-import path, { parse } from "path";
+import path from "path";
 import process from "process";
 
 import cheerio from "cheerio";
