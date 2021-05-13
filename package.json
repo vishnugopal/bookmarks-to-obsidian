@@ -25,8 +25,7 @@
     "build": "tsc -p tsconfig.json",
     "build-all": "yarn clean && yarn build && yarn esbuild-node",
     "esbuild-node": "esbuild src/cli.ts --bundle --platform=node --minify --sourcemap=external --outfile=dist/esbuild/cli.js",
-    "esbuild-node:dev": "esbuild src/cli.ts --bundle --sourcemap=external --outfile=dist/esbuild/cli.js",
-    "esbuild-node:watch": "esbuild src/cli.ts --bundle --watch --sourcemap=external --outfile=dist/esbuild/cli.js"
+    "dev": "esbuild src/cli.ts --platform=node --bundle --watch --sourcemap=external --outfile=dist/esbuild/cli.js"
   },
   "devDependencies": {
     "@types/jest": "^26.0.21",
@@ -40,5 +39,10 @@
     "ts-node": "^9.1.1",
     "typedoc": "^0.20.35",
     "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "cheerio": "*",
+    "dayjs": "^1.10.4",
+    "filenamify": "^4.3.0"
   }
 }

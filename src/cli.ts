@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { foo } from './main'
+import { run } from "./main";
 
-foo()
+run();
