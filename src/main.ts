@@ -20,12 +20,12 @@ type Bookmark = {
   categories: string[];
 };
 
-function run(): void {
-  const bookmarksPath = path.join(
-    process.cwd(),
-    process.argv[process.argv.length - 1]
-  );
+type RunArguments = {
+  bookmarksPath: string;
+  outputDirectory?: string;
+};
 
+function run({ bookmarksPath }: RunArguments): void {
   const bookmarksData = fs.readFileSync(bookmarksPath, "utf-8");
   const bookmarksParsed = cheerio.load(bookmarksData);
 

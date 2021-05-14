@@ -48,6 +48,7 @@
   },
   "dependencies": {
     "cheerio": "*",
+    "commander": "^7.2.0",
     "dayjs": "^1.10.4",
     "filenamify": "^4.3.0"
   }
