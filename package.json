@@ -1,6 +1,6 @@
 {
   "name": "bookmarks-to-obsidian",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "Sync Netscape bookmarks.html to Obsidian Markdown",
   "author": "Vishnu Gopal <vg@vishnugopal.com>",
   "repository": "https://github.com/vishnugopal/bookmarks-to-obsidian",
