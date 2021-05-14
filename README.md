@@ -5,6 +5,7 @@ Synchronizes (across multiple imports) any Netscape bookmarks.html file to Markd
 ## Usage
 
 `npm i`
+
 `npm run cli -- /path/to/bookmarks.html`
 
 will output Markdown files in build/

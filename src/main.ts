@@ -147,4 +147,5 @@ function getCategories(el: Cheerio<Element>): string[] {
   }
 }
 
-export { run };
+export { run, formatMarkdown };
+export type { Bookmark };

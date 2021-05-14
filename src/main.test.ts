@@ -1,9 +1,30 @@
-import { greet } from './main'
+import { formatMarkdown } from "./main";
 
-test('the data is peanut butter', () => {
-  expect(1).toBe(1)
-});
+import type { Bookmark } from "./main";
 
-test('greeting', () => {
-  expect(greet('Foo')).toBe('Hello Foo')
+const bookmark: Bookmark = {
+  title: "Test bookmark",
+  url: "https://example.com",
+  description: "Just an example description",
+  addDate: "2021-05-14",
+  modifiedDate: "2021-05-14",
+  modifiedDateRaw: "1620448276",
+  tags: ["hello", "world"],
+  categories: ["Unsorted"],
+};
+
+describe("formatMarkdown", () => {
+  test("converts a simple bookmark", () => {
+    expect(formatMarkdown(bookmark)).toEqual(`# Test bookmark
+[Link](https://example.com)
+
+Just an example description
+
+Added: [[2021-05-14]]
+
+
+## Tags
+[[hello]] [[world]][[Unsorted]]
+`);
+  });
 });

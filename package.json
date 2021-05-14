@@ -3,17 +3,23 @@
   "version": "0.4.2",
   "description": "Sync Netscape bookmarks.html to Obsidian Markdown",
   "author": "Vishnu Gopal <vg@vishnugopal.com>",
-  "repository": "",
+  "repository": "https://github.com/vishnugopal/bookmarks-to-obsidian",
   "license": "MIT",
   "keywords": [
     "typescript",
-    "boilerplate",
-    "esbuild"
+    "obsidian"
   ],
   "main": "./dist/tsc/main.js",
   "types": "./dist/tsc/main.d.ts",
   "bin": {
-    "my-cli-tool": "./dist/esbuild/cli.js"
+    "bookmarks-to-obsidian": "./dist/esbuild/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": "^14.6.1",
+    "npm": "^7.11.2"
   },
   "scripts": {
     "cli": "node dist/esbuild/cli.js",
