@@ -69,9 +69,8 @@ function run({ bookmarksPath, outputDirectory }: RunArguments): void {
 
 function writeOutFiles(
   bookmarks: Bookmark[],
-  outputDirectory = DEFAULT_OUTPUT_DIRECTORY
+  markdownFolder = DEFAULT_OUTPUT_DIRECTORY
 ) {
-  const markdownFolder = path.join(process.cwd(), outputDirectory);
   const modifiedFilePath = path.join(markdownFolder, `.modified`);
   const existingModifiedTimestampRaw = fs.existsSync(modifiedFilePath)
     ? fs.readFileSync(modifiedFilePath).toString()
