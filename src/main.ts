@@ -85,6 +85,8 @@ function writeOutFiles(
     fs.mkdirSync(markdownFolder);
   }
 
+  let importedBookmarksCount = 0;
+
   bookmarks.forEach((bookmark) => {
     if (
       parseFloat(existingModifiedTimestampRaw) >
@@ -99,9 +101,12 @@ function writeOutFiles(
     const filename = filenamify(bookmark.title);
     const filePath = path.join(markdownFolder, `${filename}.md`);
     fs.writeFileSync(filePath, formatMarkdown(bookmark));
+
+    importedBookmarksCount += 1;
   });
 
   fs.writeFileSync(modifiedFilePath, bookmarks[0].modifiedDateRaw);
+  console.log(`Imported ${importedBookmarksCount} bookmarks`);
 }
 
 function formatMarkdown(bookmark: Bookmark): string {
