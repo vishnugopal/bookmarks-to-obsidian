@@ -4,12 +4,24 @@ Synchronizes (across multiple imports) any Netscape bookmarks.html file to Markd
 
 ## Usage
 
-`npm i`
+```
+npx bookmarks-to-obsidian@latest -h
+Usage: bookmarks-to-obsidian [options] <bookmarksPath>
 
-`npm run cli -- /path/to/bookmarks.html`
+convert
 
-will output Markdown files in build/
+Arguments:
+  bookmarksPath
+
+Options:
+  -V, --version                   output the version number
+  -o, --output <outputDirectory>  a directory to output markdown files to,
+                                  defaults to build/
+  -h, --help                      display help for command
+```
 
 ## Development
+
+`npm install`
 
 `npm run dev`
