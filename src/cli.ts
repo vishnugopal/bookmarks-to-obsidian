@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-import { version } from "../package.json";
-
 import { Command } from "commander";
 
+import { version } from "../package.json";
 import { run } from "./main";
 
 const program = new Command();
@@ -19,6 +18,6 @@ program
     filePath: "path to bookmarks.html",
   })
   .action((bookmarksPath, options) => {
-    run({ bookmarksPath });
+    run({ bookmarksPath, outputDirectory: options.output });
   })
   .parse();

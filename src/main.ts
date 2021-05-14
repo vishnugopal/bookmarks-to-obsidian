@@ -8,6 +8,8 @@ import filenamify from "filenamify";
 
 import type { Cheerio, Element } from "cheerio";
 
+const DEFAULT_OUTPUT_DIRECTORY = "build";
+
 type Bookmark = {
   title: string;
   url: string;
@@ -25,7 +27,7 @@ type RunArguments = {
   outputDirectory?: string;
 };
 
-function run({ bookmarksPath }: RunArguments): void {
+function run({ bookmarksPath, outputDirectory }: RunArguments): void {
   const bookmarksData = fs.readFileSync(bookmarksPath, "utf-8");
   const bookmarksParsed = cheerio.load(bookmarksData);
 
@@ -62,11 +64,14 @@ function run({ bookmarksPath }: RunArguments): void {
     })
     .toArray();
 
-  writeOutFiles(bookmarks);
+  writeOutFiles(bookmarks, outputDirectory);
 }
 
-function writeOutFiles(bookmarks: Bookmark[]) {
-  const markdownFolder = path.join(process.cwd(), "build");
+function writeOutFiles(
+  bookmarks: Bookmark[],
+  outputDirectory = DEFAULT_OUTPUT_DIRECTORY
+) {
+  const markdownFolder = path.join(process.cwd(), outputDirectory);
   const modifiedFilePath = path.join(markdownFolder, `.modified`);
   const existingModifiedTimestampRaw = fs.existsSync(modifiedFilePath)
     ? fs.readFileSync(modifiedFilePath).toString()
