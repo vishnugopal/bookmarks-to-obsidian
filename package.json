@@ -1,7 +1,7 @@
 {
-  "name": "bookmarks-to-markdown",
+  "name": "bookmarks-to-obsidian",
   "version": "0.4.2",
-  "description": "Convert Netscape bookmarks.html to Markdown",
+  "description": "Sync Netscape bookmarks.html to Obsidian Markdown",
   "author": "Vishnu Gopal <vg@vishnugopal.com>",
   "repository": "",
   "license": "MIT",

@@ -1,6 +1,6 @@
-# Bookmarks to Markdown
+# Bookmarks to Obsidian
 
-Convert any Netscape bookmarks.html file to Markdown files for use with Obsidian.
+Synchronizes (across multiple imports) any Netscape bookmarks.html file to Markdown files for use with Obsidian.
 
 ## Usage
 
